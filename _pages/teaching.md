@@ -2,8 +2,7 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: List of courses I have been involved during my PhD and postdoc
 nav: true
 nav_order: 5
 ---
-{% include teaching.html %}
