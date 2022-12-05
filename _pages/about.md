@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>
 
 profile:
   align: right
-  image: oersoy.jpg
+  image: 
   image_circular: false # crops the image to make it circular
   address: >
     <p></p>
@@ -18,5 +18,5 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: false  # includes social icons at the bottom of the page
 ---
 
-TBU
+Work in progress...
 
