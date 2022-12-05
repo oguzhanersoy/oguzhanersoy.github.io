@@ -6,7 +6,7 @@ subtitle: <a href='#'>Affiliations</a>
 
 profile:
   align: right
-  image: oersoy_img
+  image: oersoy.jpg
   image_circular: false # crops the image to make it circular
   address: >
     <p></p>
