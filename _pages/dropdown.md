@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Personal
+title: personal
 nav: true
 nav_order: 6
 dropdown: true
