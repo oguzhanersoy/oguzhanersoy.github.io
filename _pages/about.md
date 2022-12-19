@@ -28,4 +28,4 @@ Currently, I am a postdoc researcher at Radboud University. I obtained my Ph.D. 
 
 Personally, I can define myself as a sporty person. I like to try and fail at new things. I play amateur-level chess but also enjoy watching Super GM tournaments. To keep my creative side alive, I also paint once in a while.
 
-{% twitter https://twitter.com/oguzer90 maxwidth=500 limit=3 %}
+{% twitter https://twitter.com/oguzer90 maxwidth=500 limit=2 %}
