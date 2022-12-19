@@ -26,4 +26,6 @@ I am an Applied Cryptography researcher who tries to apply cool Math formulas to
 
 Currently, I am a postdoc researcher at Radboud University. I obtained my Ph.D. in the Cyber Security Group at the Delft University of Technology, M.Sc. degree in Electrical & Electronics Engineering and my B.Sc. degrees with a double major in Electrical & Electronics Engineering and Mathematics at Bogazici University.
 
-Personally, I can define myself as a sporty person. I like to try and fail at new things. I play amateur-level chess but also enjoy watching big tournaments. To keep my creative side alive, I also paint once in a while.
+Personally, I can define myself as a sporty person. I like to try and fail at new things. I play amateur-level chess but also enjoy watching Super GM tournaments. To keep my creative side alive, I also paint once in a while.
+
+{% twitter https://twitter.com/oguzer90 maxwidth=500 limit=3 %}
