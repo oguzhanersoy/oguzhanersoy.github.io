@@ -92,6 +92,15 @@ git checkout -b $DEPLOY_BRANCH
 # Export JEKYLL_ENV=production
 export JEKYLL_ENV=production
 
+# Ensure a recent Bundler and install gems
+echo "Ruby version: $(ruby -v)"
+echo "Bundler before: $(bundle -v || echo 'none')"
+gem install bundler -v ">= 2.4" --no-document || true
+bundle update --bundler || true
+bundle config set path 'vendor/bundle'
+bundle install --without development test
+echo "Bundler after: $(bundle -v)"
+
 # Build site
 bundle exec jekyll build
 
