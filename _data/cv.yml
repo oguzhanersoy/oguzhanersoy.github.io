@@ -7,9 +7,12 @@
 - title: Work
   type: time_table
   contents:
+    - title: Research Lead
+      institution: Gensyn
+      year: 2023-now
     - title: Postdoc Researcher
       institution: Radboud University
-      year: 2022-now
+      year: 2022-23
     - title: Postdoc Researcher
       institution: Delft University of Technology
       year: 2021-22
