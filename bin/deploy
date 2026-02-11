@@ -4,7 +4,7 @@
 
 # Parse cmd arguments
 
-SRC_BRANCH="master"
+SRC_BRANCH="main"
 DEPLOY_BRANCH="gh-pages"
 
 USAGE_MSG="usage: deploy [-h|--help] [-u|--user] [-s|--src SRC_BRANCH] [-d|--deploy DEPLOY_BRANCH] [--verbose] [--no-push]"
@@ -115,6 +115,12 @@ else
 
     # Build site
     bundle exec jekyll build
+fi
+
+# Run PurgeCSS if available (aligns with al-folio upstream)
+if command -v purgecss >/dev/null 2>&1 && [ -f purgecss.config.js ]; then
+    echo "Running PurgeCSS..."
+    purgecss -c purgecss.config.js || echo "PurgeCSS step skipped due to error."
 fi
 
 # Delete and move files

@@ -10,7 +10,6 @@ nav_order: 1
 <!-- _pages/publications.md -->
 <div class="publications">
 
-<p>See the most up-to-date list on <a href="https://scholar.google.com/citations?user=YSiNuQsAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
 
 {%- for y in page.years %}
   <h2 class="year">{{y}}</h2>

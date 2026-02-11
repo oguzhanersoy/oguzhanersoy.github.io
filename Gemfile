@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
+
+# Core site generator
+gem 'jekyll'
+
+# Jekyll plugins
 group :jekyll_plugins do
-    gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
     gem 'jekyll-email-protect'
@@ -13,12 +17,13 @@ group :jekyll_plugins do
     gem 'jekyll-link-attributes'
     gem 'jekyll-twitter-plugin'
     gem 'jemoji'
-    gem 'mini_racer'
-    gem 'unicode_utils'
-    gem 'webrick'
-    gem 'ostruct'
 end
+
+# Non-jekyll plugins / support libraries (aligns with al-folio)
 group :other_plugins do
-    gem 'httparty'
+    gem 'css_parser'
     gem 'feedjira'
+    gem 'httparty'
+    gem 'observer'       # used by jekyll-scholar
+    gem 'ostruct'        # required by jekyll-twitter-plugin on Ruby 4
 end
