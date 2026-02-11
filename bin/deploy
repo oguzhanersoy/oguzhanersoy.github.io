@@ -92,17 +92,30 @@ git checkout -b $DEPLOY_BRANCH
 # Export JEKYLL_ENV=production
 export JEKYLL_ENV=production
 
-# Ensure a recent Bundler and install gems
-echo "Ruby version: $(ruby -v)"
-echo "Bundler before: $(bundle -v || echo 'none')"
-gem install bundler -v ">= 2.4" --no-document || true
-bundle update --bundler || true
-bundle config set path 'vendor/bundle'
-bundle install --without development test
-echo "Bundler after: $(bundle -v)"
+# Prefer Docker build to avoid Ruby default gem conflicts
+if command -v docker >/dev/null 2>&1; then
+    echo "Building site inside Docker container..."
+    docker run --rm \
+        -e JEKYLL_ENV=production \
+        -v "$PWD":/srv/jekyll \
+        -w /srv/jekyll \
+        amirpourmand/al-folio \
+        bash -lc "rm -f Gemfile.lock && bundle install && bundle exec jekyll build"
+else
+    echo "Docker not available; building with local Ruby..."
+    # Ensure a recent Bundler and install gems
+    echo "Ruby version: $(ruby -v)"
+    echo "Bundler before: $(bundle -v || echo 'none')"
+    gem install bundler -v ">= 2.4" --no-document || true
+    bundle update --bundler || true
+    bundle config set path 'vendor/bundle'
+    bundle config set without 'development test'
+    bundle install
+    echo "Bundler after: $(bundle -v)"
 
-# Build site
-bundle exec jekyll build
+    # Build site
+    bundle exec jekyll build
+fi
 
 # Delete and move files
 find . -maxdepth 1 ! -name '_site' ! -name '.git' ! -name 'CNAME' ! -name '.gitignore' -exec rm -rf {} \;
