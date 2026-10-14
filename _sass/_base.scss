@@ -712,3 +712,86 @@ progress {
      display: block;
      height: inherit;
  }
+
+
+/*******************************************************************************
+ * Site-specific overrides
+ ******************************************************************************/
+
+// Type pairing: serif for display, humanist sans for text.
+body {
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.post-title,
+.navbar-brand.title {
+  font-family: "Newsreader", Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
+}
+
+.post-header .post-title {
+  font-weight: 500;
+}
+
+// Research areas shown as chips under the intro on the about page.
+ul.research-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 0.2rem;
+
+  li {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    padding: 0.2rem 0.75rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 999px;
+    color: var(--global-theme-color);
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 576px) {
+  ul.research-areas li { white-space: normal; }
+}
+
+// Publication list: give each entry its own band so a long list stays scannable.
+.publications ol.bibliography > li {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--global-divider-color);
+
+  &:last-child { border-bottom: 0; }
+
+  .abbr abbr {
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+}
+
+// News archive page.
+.news-archive {
+  margin-top: 1.5rem;
+
+  .news-row {
+    display: grid;
+    grid-template-columns: 7.5rem 1fr;
+    gap: 0.3rem 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .news-date {
+    color: var(--global-text-color-light);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  p { margin: 0; }
+}
+
+@media (max-width: 576px) {
+  .news-archive .news-row { grid-template-columns: 1fr; }
+}

@@ -15,7 +15,6 @@ group :jekyll_plugins do
     gem 'jekyll-scholar'
     gem 'jekyll-sitemap'
     gem 'jekyll-link-attributes'
-    gem 'jekyll-twitter-plugin'
     gem 'jemoji'
 end
 
@@ -25,5 +24,5 @@ group :other_plugins do
     gem 'feedjira'
     gem 'httparty'
     gem 'observer'       # used by jekyll-scholar
-    gem 'ostruct'        # required by jekyll-twitter-plugin on Ruby 4
+    gem 'ostruct'        # stdlib gem unbundled in Ruby 3.5+
 end
