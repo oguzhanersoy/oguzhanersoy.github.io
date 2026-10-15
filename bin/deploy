@@ -92,11 +92,15 @@ git checkout -b $DEPLOY_BRANCH
 # Export JEKYLL_ENV=production
 export JEKYLL_ENV=production
 
-# Prefer Docker build to avoid Ruby default gem conflicts
-if command -v docker >/dev/null 2>&1; then
+# Prefer a Docker build locally to avoid Ruby default gem conflicts.
+# Never on CI: the container runs as root, and the non-root runner user then
+# cannot clean up or move the root-owned _site/ and cache directories.
+if [[ -z "${CI:-}" ]] && command -v docker >/dev/null 2>&1; then
     echo "Building site inside Docker container..."
     docker run --rm \
+        --user "$(id -u):$(id -g)" \
         -e JEKYLL_ENV=production \
+        -e HOME=/tmp \
         -v "$PWD":/srv/jekyll \
         -w /srv/jekyll \
         amirpourmand/al-folio \
