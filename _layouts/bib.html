@@ -128,8 +128,9 @@
 
           {%- if entry.tags %}
           {%- assign tag_domains = "Machine Learning,Blockchain,Cryptography" | split: "," -%}
+          {%- assign entry_tag_list = entry.tags | split: ", " -%}
           <div class="pub-tags">
-            {%- for tg in entry.tags | split: ", " %}
+            {%- for tg in entry_tag_list %}
             <span class="tag {% if tag_domains contains tg %}tag-domain{% else %}tag-topic{% endif %} t-{{ tg | slugify }}">{{ tg }}</span>
             {%- endfor %}
           </div>
