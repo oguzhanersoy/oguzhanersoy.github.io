@@ -795,3 +795,99 @@ ul.research-areas {
 @media (max-width: 576px) {
   .news-archive .news-row { grid-template-columns: 1fr; }
 }
+
+
+// Publication tags. Domains are filled, topics outlined - same hue either way,
+// so the colour identifies the tag and the fill identifies which axis it is on.
+.pub-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.4rem 0 0.1rem;
+
+  .tag {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    padding: 0.05rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    border: 1px solid transparent;
+  }
+
+  .tag-domain { color: var(--tag-on-fill); }
+  .tag-topic  { background: transparent; }
+
+  .tag-domain.t-machine-learning { background-color: var(--tag-machine-learning); }
+  .tag-domain.t-blockchain { background-color: var(--tag-blockchain); }
+  .tag-domain.t-cryptography { background-color: var(--tag-cryptography); }
+
+  .tag-topic.t-security-and-privacy { color: var(--tag-security-and-privacy); border-color: var(--tag-security-and-privacy); }
+  .tag-topic.t-decentralisation { color: var(--tag-decentralisation); border-color: var(--tag-decentralisation); }
+  .tag-topic.t-pre-training { color: var(--tag-pre-training); border-color: var(--tag-pre-training); }
+  .tag-topic.t-post-training { color: var(--tag-post-training); border-color: var(--tag-post-training); }
+  .tag-topic.t-model-merging { color: var(--tag-model-merging); border-color: var(--tag-model-merging); }
+  .tag-topic.t-inference { color: var(--tag-inference); border-color: var(--tag-inference); }
+  .tag-topic.t-verifiability { color: var(--tag-verifiability); border-color: var(--tag-verifiability); }
+  .tag-topic.t-incentives { color: var(--tag-incentives); border-color: var(--tag-incentives); }
+}
+
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 1.2rem 0 0.5rem;
+
+  .pub-filter {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--global-divider-color);
+    background: transparent;
+    color: var(--global-text-color-light);
+    cursor: pointer;
+  }
+
+  .pub-filter:hover { opacity: 0.75; }
+
+  .pub-filter.active {
+    background-color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    color: #fff;
+  }
+
+  .pub-filter.t-machine-learning { color: var(--tag-machine-learning); border-color: var(--tag-machine-learning); }
+  .pub-filter.t-machine-learning.active { background-color: var(--tag-machine-learning); border-color: var(--tag-machine-learning); color: var(--tag-on-fill); }
+  .pub-filter.t-blockchain { color: var(--tag-blockchain); border-color: var(--tag-blockchain); }
+  .pub-filter.t-blockchain.active { background-color: var(--tag-blockchain); border-color: var(--tag-blockchain); color: var(--tag-on-fill); }
+  .pub-filter.t-cryptography { color: var(--tag-cryptography); border-color: var(--tag-cryptography); }
+  .pub-filter.t-cryptography.active { background-color: var(--tag-cryptography); border-color: var(--tag-cryptography); color: var(--tag-on-fill); }
+  .pub-filter.t-security-and-privacy { color: var(--tag-security-and-privacy); border-color: var(--tag-security-and-privacy); }
+  .pub-filter.t-security-and-privacy.active { background-color: var(--tag-security-and-privacy); border-color: var(--tag-security-and-privacy); color: var(--tag-on-fill); }
+  .pub-filter.t-decentralisation { color: var(--tag-decentralisation); border-color: var(--tag-decentralisation); }
+  .pub-filter.t-decentralisation.active { background-color: var(--tag-decentralisation); border-color: var(--tag-decentralisation); color: var(--tag-on-fill); }
+  .pub-filter.t-pre-training { color: var(--tag-pre-training); border-color: var(--tag-pre-training); }
+  .pub-filter.t-pre-training.active { background-color: var(--tag-pre-training); border-color: var(--tag-pre-training); color: var(--tag-on-fill); }
+  .pub-filter.t-post-training { color: var(--tag-post-training); border-color: var(--tag-post-training); }
+  .pub-filter.t-post-training.active { background-color: var(--tag-post-training); border-color: var(--tag-post-training); color: var(--tag-on-fill); }
+  .pub-filter.t-model-merging { color: var(--tag-model-merging); border-color: var(--tag-model-merging); }
+  .pub-filter.t-model-merging.active { background-color: var(--tag-model-merging); border-color: var(--tag-model-merging); color: var(--tag-on-fill); }
+  .pub-filter.t-inference { color: var(--tag-inference); border-color: var(--tag-inference); }
+  .pub-filter.t-inference.active { background-color: var(--tag-inference); border-color: var(--tag-inference); color: var(--tag-on-fill); }
+  .pub-filter.t-verifiability { color: var(--tag-verifiability); border-color: var(--tag-verifiability); }
+  .pub-filter.t-verifiability.active { background-color: var(--tag-verifiability); border-color: var(--tag-verifiability); color: var(--tag-on-fill); }
+  .pub-filter.t-incentives { color: var(--tag-incentives); border-color: var(--tag-incentives); }
+  .pub-filter.t-incentives.active { background-color: var(--tag-incentives); border-color: var(--tag-incentives); color: var(--tag-on-fill); }
+
+  .pub-filter-sep {
+    width: 1px;
+    align-self: stretch;
+    background: var(--global-divider-color);
+    margin: 0 0.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .pub-filters .pub-filter-sep { display: none; }
+}

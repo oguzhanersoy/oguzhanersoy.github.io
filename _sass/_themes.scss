@@ -16,6 +16,20 @@
   --global-divider-color: rgba(0,0,0,.1);
   --global-card-bg-color: #{$white-color};
 
+  // publication tag colours
+  --tag-machine-learning: #1d4ed8;
+  --tag-blockchain: #0f766e;
+  --tag-cryptography: #7e22ce;
+  --tag-security-and-privacy: #b91c1c;
+  --tag-decentralisation: #0e7490;
+  --tag-pre-training: #a16207;
+  --tag-post-training: #c2410c;
+  --tag-model-merging: #7c3aed;
+  --tag-inference: #be185d;
+  --tag-verifiability: #15803d;
+  --tag-incentives: #4f46e5;
+  --tag-on-fill: #ffffff;
+
   .fa-sun {
     display : none;
   }
@@ -46,6 +60,20 @@ html[data-theme='dark'] {
   --global-distill-app-color: #{$grey-color-light};
   --global-divider-color: #424246;
   --global-card-bg-color: #{$grey-900};
+
+  // publication tag colours
+  --tag-machine-learning: #60a5fa;
+  --tag-blockchain: #2dd4bf;
+  --tag-cryptography: #c084fc;
+  --tag-security-and-privacy: #f87171;
+  --tag-decentralisation: #22d3ee;
+  --tag-pre-training: #fbbf24;
+  --tag-post-training: #fb923c;
+  --tag-model-merging: #a78bfa;
+  --tag-inference: #f472b6;
+  --tag-verifiability: #4ade80;
+  --tag-incentives: #818cf8;
+  --tag-on-fill: #1c1c1d;
 
   .fa-sun {
     padding-left: 10px;

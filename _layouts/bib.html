@@ -1,7 +1,7 @@
 ---
 ---
 <!-- _layouts/bib.html -->
-      <div class="row">
+      <div class="row"{% if entry.tags %} data-tags="{{ entry.tags }}"{% endif %}>
         <div class="col-sm-2 {% if entry.preview %}preview{% else %}abbr{% endif %}">
         {%- if entry.preview -%}
           {% if entry.preview contains '://' -%}
@@ -125,7 +125,16 @@
             {{ periodical | strip }}
           </div>
         {%- endif %}
-        
+
+          {%- if entry.tags %}
+          {%- assign tag_domains = "Machine Learning,Blockchain,Cryptography" | split: "," -%}
+          <div class="pub-tags">
+            {%- for tg in entry.tags | split: ", " %}
+            <span class="tag {% if tag_domains contains tg %}tag-domain{% else %}tag-topic{% endif %} t-{{ tg | slugify }}">{{ tg }}</span>
+            {%- endfor %}
+          </div>
+          {%- endif %}
+
           <!-- Links/Buttons -->
           <div class="links">
           {%- if entry.abstract %}
@@ -138,7 +147,7 @@
             <a class="bibtex btn btn-sm z-depth-0" role="button">Bib</a>
           {%- endif %}
           {%- if entry.html %}
-            <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">HTML</a>
+            <a href="{{ entry.html }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
           {%- endif %}
           {%- if entry.pdf %}
             {% if entry.pdf contains '://' -%}
